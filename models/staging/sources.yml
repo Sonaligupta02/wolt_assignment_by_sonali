@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: wolt_snack_raw
+    database: wolt-project-506607
+    schema: wolt_snack_raw
+
+    tables:
+      - name: snack_store_item_logs
+      - name: snack_store_promos
+      - name: snack_store_purchase_logs
+

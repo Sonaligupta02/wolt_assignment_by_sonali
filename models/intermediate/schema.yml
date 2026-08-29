@@ -1,0 +1,105 @@
+version: 2
+
+models:
+  - name: int_item_history
+    description: >
+      Historical item attributes extracted from the item change logs.
+      Each row represents an item version at a specific point in time.
+
+    columns:
+
+      - name: log_item_id
+        description: "Unique identifier for the item change log."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: item_key
+        description: "Unique identifier of the product."
+        data_tests:
+          - not_null
+
+      - name: time_log_created_utc
+        description: "Timestamp when the item record was modified."
+        data_tests:
+          - not_null
+
+      - name: item_name
+        description: "English product name when available."
+        data_tests:
+          - not_null
+
+      - name: item_category
+        description: "Product category."
+        data_tests:
+          - not_null
+
+      - name: brand_name
+        description: "Product brand:May be missing when the source system does not provide a brand."
+      
+
+  - name: int_order_items
+    description: >
+      One row per item purchased within an order.
+
+    columns:
+      - name: purchase_key
+        data_tests:
+          - not_null
+
+      - name: customer_key
+        data_tests:
+          - not_null
+
+      - name: item_key
+        data_tests:
+          - not_null
+
+      - name: quantity
+        data_tests:
+          - not_null
+
+
+  - name: int_order_item_pricing
+    description: >
+      One row per purchased item with the product price
+      valid at the time the order was received.
+
+    columns:
+      - name: purchase_key
+        data_tests:
+          - not_null
+
+      - name: item_key
+        data_tests:
+          - not_null
+
+      - name: quantity
+        data_tests:
+          - not_null  
+
+
+  - name: int_order_item_promotions
+    description: >
+      One row per purchased item with applicable promotion information.
+
+    columns:
+      - name: purchase_key
+        data_tests:
+          - not_null
+
+      - name: item_key
+        data_tests:
+          - not_null
+
+      - name: quantity
+        data_tests:
+          - not_null
+
+      - name: is_on_promotion
+        data_tests:
+          - not_null
+
+      - name: discount_percentage
+        data_tests:
+          - not_null

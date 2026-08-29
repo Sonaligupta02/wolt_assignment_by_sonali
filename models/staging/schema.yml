@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: stg_item_logs
+    description: "Staging model for Wolt Snack Shop item change logs."
+
+    columns:
+      - name: log_item_id
+        description: "Unique identifier for each item change log."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: item_key
+        description: "Unique identifier of the snack item."
+        data_tests:
+          - not_null
+
+      - name: time_log_created_utc
+        description: "Timestamp when the item was changed."
+        data_tests:
+          - not_null
+
+  - name: stg_promos
+    description: "Staging model for Wolt Snack Shop promotions."
+
+    columns:
+      - name: item_key
+        description: "Unique identifier of the snack item."
+        data_tests:
+          - not_null
+
+      - name: promo_start_date
+        description: "First date when the promotion is active."
+        data_tests:
+          - not_null
+
+      - name: promo_end_date
+        description: "First date when the promotion is no longer active."
+        data_tests:
+          - not_null
+
+      - name: discount_percentage
+        description: "Percentage discount applied to the item."
+        data_tests:
+          - not_null
+
+  - name: stg_purchases
+    description: "Staging model for completed Wolt Snack Shop purchases."
+
+    columns:
+      - name: purchase_key
+        description: "Unique identifier for the purchase."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_key
+        description: "Unique identifier of the customer."
+        data_tests:
+          - not_null
+
+      - name: order_received_at
+        description: "Timestamp when the order was received."
+        data_tests:
+          - not_null
+
+      - name: total_basket_value
+        description: "Total basket value after discounts."
+        data_tests:
+          - not_null
