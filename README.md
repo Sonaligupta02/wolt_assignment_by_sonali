@@ -52,7 +52,7 @@ The main idea is to perform complex transformations once in dbt so that downstre
 
 ## 1. Staging Layer
 
-The staging layer cleans and standardizes the raw source data.
+Clean and standardize raw purchases, product logs, and promotion data while keeping the source information consistent.
 
 - `stg_purchases`
 - `stg_item_logs`
@@ -60,9 +60,9 @@ The staging layer cleans and standardizes the raw source data.
 
 The staging layer prepares the raw data before applying business logic.
 
-## 2. Intermediate Layer
+## 2. Intermediate Layer 
 
-The intermediate layer contains reusable transformations, joins, and business logic.
+This intermediate layer contains reusable transformations, joins, and business logic, combining orders, products, pricing, and promotion data to create a consistent dataset ready for further analysis.
 
 Main intermediate models include:
 
@@ -75,19 +75,29 @@ This layer combines order, customer, product, pricing, and promotion information
 
 ## 3. Mart Layer
 
-The final business-ready fact table is:
+The final business-ready fact table, fct_order_items, combines customer, product, revenue, promotion, delivery, and fee information into a single analytics-ready dataset for business analysis.
 
 ### `fct_order_items`
 
-This is the main dataset created for the Analytics Team.
+
+This is the main dataset created for the Analytics Team. 
+
 
 This model provides a **single analytics-ready source** that can be reused for different business analyses and business questions. 
 
-### Task 1 Questions
+#### Data Grain
+
+The main `fct_order_items` mart is built at the **order-item level**.
+
+Each row represents an item within a customer order.
+
+Order-level values such as basket value, Wolt service fee, and courier fee may repeat across multiple item rows. Therefore, these metrics are first aggregated to the order level when calculating total or average order-level costs.
+
+## Task 1 Questions
 [Open BigQuery SQL File] (https://github.com/Sonaligupta02/wolt_assignment_by_sonali/blob/main/Big_query_task_1.sql) 
 Queries used to analyze the transformed data and answer the Task 1 business questions.
 
-### Task 2 – Business Analysis & Dashboard
+## Task 2 – Business Analysis & Dashboard
 [Open Data Studio Dashboard] [https://datastudio.google.com/u/0/reporting/fce98fd5-bb32-4a51-8218-3920c75b23b9/page/xrY7F]
 Interactive dashboard showing category performance, star products, customer behaviour, trends, insights, and recommendations.
 
