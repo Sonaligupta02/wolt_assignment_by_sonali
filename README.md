@@ -18,7 +18,7 @@ The project has two main parts:
 The following tools were used:
 
 - **Google BigQuery** – Data warehouse and SQL analysis
-- **dbt ** – Data transformation and modelling
+- **dbt** – Data transformation and modelling
 - **SQL** – Data transformation and business analysis
 - **Data Studio** – Dashboard and data visualization
 - **Git & GitHub** – Version control
@@ -41,9 +41,9 @@ Mart Layer
    ↓
 fct_order_items
    ↓
-Business Analysis
+Performance Analysis
    ↓
-Looker Studio Dashboard
+Data Studio Dashboard
 ```
 
 The main idea is to perform complex transformations once in dbt so that downstream analysts can work with clean datasets and simple SQL queries.
@@ -85,10 +85,10 @@ This model provides a **single analytics-ready source** that can be reused for d
 
 ### Task 1 Questions
 [Open BigQuery SQL File] (https://github.com/Sonaligupta02/wolt_assignment_by_sonali/blob/main/Big_query_task_1.sql) 
-QL queries used to analyze the transformed data and answer the Task 1 business questions.
+Queries used to analyze the transformed data and answer the Task 1 business questions.
 
 ### Task 2 – Business Analysis & Dashboard
-Open Data Studio Dashboard [https://datastudio.google.com/u/0/reporting/fce98fd5-bb32-4a51-8218-3920c75b23b9/page/xrY7F]
-I created a small performance mart using the transformed fct_order_items data. This mart provides the main metrics needed to analyze category performance, star products, sales trends, and customer behaviour. I used Data Studio to visualize the results and present key business insights and recommendations. 
+[Open Data Studio Dashboard] [https://datastudio.google.com/u/0/reporting/fce98fd5-bb32-4a51-8218-3920c75b23b9/page/xrY7F]
+Interactive dashboard showing category performance, star products, customer behaviour, trends, insights, and recommendations.
 
 
