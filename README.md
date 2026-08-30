@@ -18,9 +18,9 @@ The project has two main parts:
 The following tools were used:
 
 - **Google BigQuery** – Data warehouse and SQL analysis
-- **dbt Core** – Data transformation and modelling
+- **dbt ** – Data transformation and modelling
 - **SQL** – Data transformation and business analysis
-- **Looker Studio** – Dashboard and data visualization
+- **Data Studio** – Dashboard and data visualization
 - **Git & GitHub** – Version control
 - **VS Code** – Development environment
 
@@ -48,23 +48,17 @@ Looker Studio Dashboard
 
 The main idea is to perform complex transformations once in dbt so that downstream analysts can work with clean datasets and simple SQL queries.
 
----
-
 # dbt Model Structure
 
 ## 1. Staging Layer
 
 The staging layer cleans and standardizes the raw source data.
 
-Main staging models include:
-
 - `stg_purchases`
 - `stg_item_logs`
 - `stg_promos`
 
 The staging layer prepares the raw data before applying business logic.
-
----
 
 ## 2. Intermediate Layer
 
@@ -78,8 +72,6 @@ Main intermediate models include:
 - `int_order_item_promotions`
 
 This layer combines order, customer, product, pricing, and promotion information.
-
----
 
 ## 3. Mart Layer
 
@@ -110,6 +102,6 @@ It contains:
 - `wolt_service_fee`
 - `courier_base_fee`
 
-The purpose of this model is to provide a **single analytics-ready source** that can be reused for different business analyses.
+The purpose of this model is to provide a **single analytics-ready source** that can be reused for different business analyses and all business questions. 
 
----
+
