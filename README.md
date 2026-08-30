@@ -104,5 +104,4 @@ It contains:
 
 This model provides a **single analytics-ready source** that can be reused for different business analyses and business questions. 
 
-[Big Query Questions link to answer task 1 questions] (https://github.com/Sonaligupta02/wolt_assignment_by_sonali/edit/main/README.md#:~:text=.gitignore-,Big_query_task_1,-.sql) 
-
+[Big Query Questions link to answer task 1 questions] (https://github.com/Sonaligupta02/wolt_assignment_by_sonali/blob/main/Big_query_task_1.sql) 
