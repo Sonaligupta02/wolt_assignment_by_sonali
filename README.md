@@ -81,27 +81,14 @@ The final business-ready fact table is:
 
 This is the main dataset created for the Analytics Team.
 
-It contains:
-
-- `purchase_key`
-- `customer_key`
-- `order_received_at`
-- `delivery_distance_meters`
-- `item_key`
-- `item_name`
-- `item_category`
-- `brand_name`
-- `quantity`
-- `product_base_price`
-- `discount_percentage`
-- `is_on_promotion`
-- `discount_amount_per_unit`
-- `final_item_price_per_unit`
-- `final_item_value`
-- `total_basket_value`
-- `wolt_service_fee`
-- `courier_base_fee`
-
 This model provides a **single analytics-ready source** that can be reused for different business analyses and business questions. 
 
-[Big Query Questions link to answer task 1 questions] (https://github.com/Sonaligupta02/wolt_assignment_by_sonali/blob/main/Big_query_task_1.sql) 
+### Task 1 Questions
+[Open BigQuery SQL File] (https://github.com/Sonaligupta02/wolt_assignment_by_sonali/blob/main/Big_query_task_1.sql) 
+QL queries used to analyze the transformed data and answer the Task 1 business questions.
+
+### Task 2 – Business Analysis & Dashboard
+Open Data Studio Dashboard [https://datastudio.google.com/u/0/reporting/fce98fd5-bb32-4a51-8218-3920c75b23b9/page/xrY7F]
+I created a small performance mart using the transformed fct_order_items data. This mart provides the main metrics needed to analyze category performance, star products, sales trends, and customer behaviour. I used Data Studio to visualize the results and present key business insights and recommendations. 
+
+
